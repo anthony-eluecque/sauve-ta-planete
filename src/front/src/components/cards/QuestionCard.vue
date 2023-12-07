@@ -17,22 +17,6 @@
     </v-card>
 </template>
 
-<style>
-.question-card {
-    max-width: 400px;
-    margin: auto;
-    width: 100%;
-    padding: 10px 5px;
-    border-radius: 25px;
-}
-
-.choice-btn {
-    width: 70px;
-    height: 70px !important;
-    border-radius: 15px;
-}
-
-.mdi-close, .mdi-check {
-    font-size: 55px !important;
-}
+<style lang="stylus">
+@import '../../styles/components/question-card'
 </style>

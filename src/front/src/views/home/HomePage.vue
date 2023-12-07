@@ -24,10 +24,7 @@ const coin: ComputedRef<string> = computed(() => {
 </script>
 
 <style lang="stylus">
-@import "../src/styles/variables.styl"
-body {
-    background-color: $main-back-color;
-}
+@import "../src/styles/global.styl"
 
 .home-card {
     background: url('/pattern.png') repeat;
