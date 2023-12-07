@@ -30,10 +30,11 @@ body {
 }
 
 .home-card {
+    background: url('/pattern.png') repeat;
     background-color: black;
     height: 96vh;
     margin: 2vh auto;
-    border-radius: 15px;
+    border-radius: 50px;
     max-width: 450px;
     border: 4px white solid;
 }

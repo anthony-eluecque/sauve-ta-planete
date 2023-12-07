@@ -23,15 +23,16 @@
     margin: auto;
     width: 100%;
     padding: 10px 5px;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
 .choice-btn {
-    width: 60px;
-    height: 60px !important;
+    width: 70px;
+    height: 70px !important;
+    border-radius: 15px;
 }
 
 .mdi-close, .mdi-check {
-    font-size: xxx-large !important;
+    font-size: 55px !important;
 }
 </style>
