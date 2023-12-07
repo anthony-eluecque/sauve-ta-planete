@@ -1,6 +1,7 @@
 <template>
     <v-card class="question-card">
-        <v-card-title class="text-center">1KG de riz pollue t-il plus que 300g de boeuf ?</v-card-title>
+        <v-card-title class="text-center my-2">1KG de riz pollue t-il plus que 300g de boeuf ?</v-card-title>
+        <v-divider class="mx-12 mb-4"></v-divider>
     </v-card>
 </template>
 
