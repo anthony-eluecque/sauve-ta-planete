@@ -4,3 +4,8 @@
         </v-col>
     </v-row>
 </template>
+
+
+<style lang="stylus">
+@import '../../styles/components/score-bar'
+</style>
