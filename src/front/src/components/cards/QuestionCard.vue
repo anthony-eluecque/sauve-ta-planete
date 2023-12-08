@@ -4,12 +4,12 @@
         <v-divider class="mx-6 my-4" :thickness="5" style="opacity: 100% !important;"></v-divider>
         <v-row no-gutters class="mx-6 mt-6">
             <v-col cols="6">
-                <v-btn class="choice-btn" color="button-back-color" @click="falseResult">
+                <v-btn class="choice-btn" color="button-back-color" @click="emit('result', false)">
                     <v-icon icon="mdi-close" color="button-text-color" size="x-large"></v-icon>
                 </v-btn>
             </v-col>
             <v-col cols="6" align="right">
-                <v-btn class="choice-btn" color="button-back-color">
+                <v-btn class="choice-btn" color="button-back-color" @click="emit('result', true)">
                     <v-icon icon="mdi-check" color="button-text-color" size="x-large"></v-icon>
                 </v-btn>
             </v-col>
@@ -25,10 +25,9 @@ const props = defineProps({
         required: true
     }
 });
-
-function falseResult() {
-    console.log(false)
-}
+const emit = defineEmits<{
+    (e: 'result', value: boolean):void
+}>();
 </script>
 
 <style lang="stylus">
