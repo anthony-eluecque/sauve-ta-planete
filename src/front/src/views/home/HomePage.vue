@@ -13,7 +13,7 @@
           </ul>
         </label>
         <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
-        <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`' @click="showEasterEgg"></v-img>
+        <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`'></v-img>
         <v-img class="easter-egg-1" :class="easterEggState" src="/easter-egg1.png" @click="handleEasterEggClick"></v-img>
         <v-img class="easter-egg-2" src="/bubule.png" v-if="easterEggState === 'easter-egg-3'"></v-img>
         <v-dialog v-model="gameLose" width="800">
@@ -163,8 +163,8 @@ function replay(): void {
 .easter-egg-1 {
     display:block; 
     position: absolute;
-    bottom: -30vh;
-    right: -10vh;
+    bottom: -40vh;
+    right: -15vh;
     transform: scale(1);
     transform: rotateZ(-20deg);
     width: 50%;
