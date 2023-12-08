@@ -5,15 +5,18 @@
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
             <img width="55" height="55" :src="coin"/>
         </v-row>
-        <QuestionCard class="mt-16"/>
+        <QuestionCard class="mt-10" :question="actuQuest"/>
     </v-card>
 </template>
 
 <script lang="ts" setup>
 import QuestionCard from '@/components/cards/QuestionCard.vue';
 import { ref, computed, type Ref, type ComputedRef } from 'vue';
+import { questions, type Question } from '@/data/questions';
 
 const score: Ref<number> = ref(131)
+const precedQuest: Ref<Array<Question>> = ref([])
+const actuQuest: Ref<Question> = ref(questions[Math.floor(Math.random() * questions.length)])
 
 const coin: ComputedRef<string> = computed(() => {
     if (score.value === 130){
@@ -21,6 +24,9 @@ const coin: ComputedRef<string> = computed(() => {
     }
     return '/coin.png';
 })
+
+console.log(actuQuest.value)
+
 </script>
 
 <style lang="stylus">
