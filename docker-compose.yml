@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  front:
+    container_name: stp_front
+    build: src/front
+    restart: always
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "8085:80"
