@@ -1,8 +1,9 @@
 <template>
     <v-card class="home-card">
         <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
-        <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`' @click="showEasterEgg"></v-img>
-        <v-img v-show="showEasterEgg1" class="easter-egg-1" src="/easter-egg1.png"></v-img>
+        <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`'></v-img>
+        <v-img class="easter-egg-1" :class="easterEggState" src="/easter-egg1.png" @click="handleEasterEggClick"></v-img>
+        <v-img class="easter-egg-2" src="/bubule.png" v-if="easterEggState === 'easter-egg-3'"></v-img>
         <v-row no-gutters class="d-flex justify-center my-6">
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
             <img width="55" height="55" :src="coin"/>
@@ -23,6 +24,7 @@ const actuQuest = ref(questions[Math.floor(Math.random() * questions.length)])
 const planetPos = ref(7)
 const planetValue = ['8', '7', '6', '5', '4', '3', '2', '1']
 const gameLose = ref(false)
+const easterEggState = ref('easter-egg-1');
 
 const planetNum = computed(() => {
     return planetValue[Math.floor(planetPos.value / 2)]
@@ -58,13 +60,13 @@ function getResult(result: boolean):void {
 const questionsChoice = computed(() => {
     return questions.filter((existingQuestion: Question) => !precedQuest.value.includes(existingQuestion));
 })
-
-const showEasterEgg1: Ref<boolean> = ref(false);
-const showEasterEgg = () => {
-  showEasterEgg1.value = true;
-  setTimeout(() => {
-    showEasterEgg1.value = false;
-  }, 2000);
+function handleEasterEggClick() {
+    if (easterEggState.value === 'easter-egg-1') {
+        easterEggState.value = 'easter-egg-3';
+        setTimeout(() => {
+            easterEggState.value = 'easter-egg-1';
+        }, 3000);
+    }
 }
 
 </script>
@@ -81,12 +83,53 @@ const showEasterEgg = () => {
     max-width: 450px;
     padding: 0 20px;
     border: 4px white solid;
+    position: relative;
 }
 
 .planet-img {
     max-height: 35vh;
     height: 100%;
     margin-top: 30px;
+}
+
+.easter-egg-1:hover {
+    cursor: pointer;
+}
+.easter-egg-1 {
+    display:block; 
+    position: absolute;
+    bottom: -30vh;
+    right: -10vh;
+    transform: scale(1);
+    transform: rotateZ(-20deg);
+    width: 50%;
+    height: 50%;
+    z-index:101;
+    transition: 1s;
+}
+.easter-egg-2 {
+    display:block; 
+    position: absolute;
+    bottom: -25vh;
+    right: 1vh;
+    transform: scale(1);
+    transform: rotateZ(-20deg);
+    width: 100%;
+    height: 100%;
+    z-index:102;
+}
+
+.easter-egg-3 {
+    display:block; 
+    position: absolute;
+    bottom: -70vh;
+    right: -25vh;
+    transform: scale(1);
+    transform: rotateZ(-20deg);
+    width: 100%;
+    height: 100%;
+    z-index:101;
+    transition: 1s;
 }
 
 .capystreak {
