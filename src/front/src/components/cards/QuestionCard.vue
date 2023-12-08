@@ -27,7 +27,7 @@
                     
                     <br> <br>
                     <h3>Les sources : </h3>
-                    <a :href="article" v-for="(article,i) in article_text?.sources"> <br> <p class="source__text"> {{ article }}</p> </a>
+                    <a :href="article" v-for="(article,i) in article_text?.sources" :key="i"> <br> <p class="source__text"> {{ article }}</p> </a>
                 </v-card-text>
             </v-card>
             </v-dialog>
@@ -52,7 +52,7 @@
 
 <script setup lang="ts">
 import SwipeableCard from '../SwipeableCard.vue';
-import { type Question, type Theme } from '@/data/questions';
+import { type Question } from '@/data/questions';
 import { type Article, articles } from '@/data/articles'
 import { computed, ref } from 'vue';
 const props = defineProps({
@@ -77,11 +77,6 @@ const emit = defineEmits<{
 function onSwipe(direction: string): void {
     if (direction === 'swipe-left') emit('result', false)
     else emit('result', true)
-}
-
-const getRelativePath = (url: string) => {
-      const parsedUrl = new URL(url);
-      return parsedUrl.pathname; // This will give you the path after https://www.
 }
 </script>
 

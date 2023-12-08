@@ -1,7 +1,7 @@
 <template>
     <v-card class="home-card">
         <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
-        <v-img class="planet-img easter-egg-1-plan" src="/planet.png" @click="showEasterEgg"></v-img>
+        <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`' @click="showEasterEgg"></v-img>
         <v-img v-show="showEasterEgg1" class="easter-egg-1" src="/easter-egg1.png"></v-img>
         <v-row no-gutters class="d-flex justify-center my-6">
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
@@ -20,6 +20,13 @@ const score = ref(0)
 const precedQuest: Ref<Array<Question>> = ref([])
 const streak = ref(0)
 const actuQuest = ref(questions[Math.floor(Math.random() * questions.length)])
+const planetPos = ref(7)
+const planetValue = ['8', '7', '6', '5', '4', '3', '2', '1']
+const gameLose = ref(false)
+
+const planetNum = computed(() => {
+    return planetValue[Math.floor(planetPos.value / 2)]
+})
 
 const coin = computed(() => {
     if (score.value === 130) return '/bowling.png';
@@ -29,11 +36,19 @@ const coin = computed(() => {
 
 function getResult(result: boolean):void {
     if (result === actuQuest.value.reponse){
+        if (planetPos.value < 15) planetPos.value += 1
         if (streak.value >= 4 ) score.value += 1 + streak.value - 3
         else score.value += 1
         if (streak.value < 12 ) streak.value += 1
     }
-    else streak.value = 0
+    else {
+        streak.value = 0
+        if (planetPos.value > 1) planetPos.value -= 1
+        else {
+            console.log('perdu')
+            gameLose.value = true
+        }
+    }
     precedQuest.value.unshift(actuQuest.value)
     if (precedQuest.value.length > 5) precedQuest.value.pop()
     actuQuest.value = questionsChoice.value[Math.floor(Math.random() * questionsChoice.value.length)]
