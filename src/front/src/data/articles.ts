@@ -1,7 +1,10 @@
+import type { Theme } from "./questions"
+
 export interface Article {
     titre : string,
     content : string
     sources : string[]
+    theme : Theme
 }
 
 export const articles : Article[] = [
@@ -36,7 +39,8 @@ export const articles : Article[] = [
             'https://www.notre-environnement.gouv.fr/actualites/breves/article/alimentation-et-environnement-les-enjeux-de-la-consommation-de-viande-en-france',
             'https://librairie.ademe.fr/consommer-autrement/779-empreinte-energetique-et-carbone-de-l-alimentation-en-france.html',
             'https://agirpourlatransition.ademe.fr/particuliers/conso/conso-responsable/impact-alimentation-sur-environnement'
-        ]
+        ],
+        theme :"alimentation"
     },
     {
         titre: 'Climat en France',
@@ -47,7 +51,8 @@ export const articles : Article[] = [
         sources : [
             'https://agirpourlatransition.ademe.fr/',
             'https://www.gouvernement.fr/les-priorites/france-nation-verte/la-planification-ecologique'
-        ]
+        ],
+        theme:"climat"
     },
     {
         titre : 'Histoire du changement climatique français',
@@ -59,7 +64,8 @@ export const articles : Article[] = [
         sources : [
             'https://meteofrance.com/changement-climatique/observer/le-changement-climatique-en-france',
             'https://www.vie-publique.fr/eclairage/290911-chronologie-du-changement-climatique-dorigine-humaine#:~:text=URL%3A%20https%3A%2F%2Fwww.vie,explorer%E2%80%A0support.microsoft.com%E3%80%91'
-        ]
+        ],
+        theme:"histoire"
     },
     {
         titre : 'Organisme en rapport avec la pollution française',
@@ -73,7 +79,8 @@ export const articles : Article[] = [
             'https://www.ademe.fr/',
             'https://www.ineris.fr/fr',
             'https://www.anses.fr/fr'
-        ]
+        ],
+        theme:"organisme"
     },
     {
         titre: 'Décès liés à la pollution',
@@ -87,6 +94,7 @@ export const articles : Article[] = [
         `,
         sources : [
             'https://wp.towson.edu/iajournal/2017/02/27/consequences-of-air-pollution-in-france/'
-        ]
+        ],
+        theme:"décès"
     }
 ]
