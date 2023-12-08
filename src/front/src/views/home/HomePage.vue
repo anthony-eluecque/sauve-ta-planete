@@ -8,7 +8,7 @@
                 <v-card-title>Vous avez perdu.</v-card-title>
                 <v-divider></v-divider>
                 <v-card-text class="text__container">
-                    Votre planète pue la pollution, bravo !<br><br>
+                    Votre planète n'est plus vivable, bravo !<br><br>
                     <v-btn @click="replay">Rejouer</v-btn>
                 </v-card-text>
             </v-card>
@@ -17,7 +17,17 @@
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
             <img width="55" height="55" :src="coin"/>
         </v-row>
-        <QuestionCard class="mt-10" :question="actuQuest" @result="getResult"/>
+        <QuestionCard class="mt-10" :question="actuQuest" @result="getResult" v-if="!showReponse"/>
+        <v-dialog v-model="showReponse" width="800">
+            <v-card  class="rounded-xl question-card py-6" color="card-back-color">
+                <v-card-title v-if="reponseValue">Bravo</v-card-title>
+                <v-card-title v-else>Dommage</v-card-title>
+                <v-divider></v-divider>
+                <v-card-text class="text__container">{{ actuQuest.explication }}<br><br>
+                    <v-btn @click="nextQuest">Question suivante</v-btn>
+                </v-card-text>
+            </v-card>
+        </v-dialog>
     </v-card>
 </template>
 
@@ -34,6 +44,8 @@ const actuQuest = ref(questions[Math.floor(Math.random() * questions.length)])
 const planetPos = ref(7)
 const planetValue = ['8', '7', '6', '5', '4', '3', '2', '1']
 const gameLose = ref(false)
+const showReponse = ref(false)
+const reponseValue = ref(false)
 
 const planetNum = computed(() => {
     return planetValue[Math.floor(planetPos.value / 2)]
@@ -46,6 +58,8 @@ const coin = computed(() => {
 })
 
 function getResult(result: boolean):void {
+    reponseValue.value = true
+    showReponse.value = true
     if (result === actuQuest.value.reponse){
         if (planetPos.value < 15) planetPos.value += 1
         if (streak.value >= 4 ) score.value += 1 + streak.value - 3
@@ -64,6 +78,11 @@ function getResult(result: boolean):void {
     }
     precedQuest.value.unshift(actuQuest.value)
     if (precedQuest.value.length > 5) precedQuest.value.pop()
+    
+}
+
+function nextQuest() {
+    showReponse.value = false
     actuQuest.value = questionsChoice.value[Math.floor(Math.random() * questionsChoice.value.length)]
     console.log(actuQuest.value.reponse)
 }
@@ -80,7 +99,7 @@ const showEasterEgg = () => {
   }, 2000);
 }
 
-function replay() {
+function replay(): void {
   router.go();
 }
 
