@@ -1,33 +1,41 @@
 <template>
-    <v-card class="question-card py-6" color="card-back-color">
-        <span class="d-block text-center text-h5 mx-6">{{ props.question.question }}</span>
-        <v-divider class="mx-6 my-4" :thickness="5" style="opacity: 100% !important;"></v-divider>
-        <v-row no-gutters class="mx-6 mt-6">
-            <v-col cols="6">
-                <v-btn class="choice-btn" color="button-back-color" @click="emit('result', false)">
-                    <v-icon icon="mdi-close" color="button-text-color" size="x-large"></v-icon>
-                </v-btn>
-            </v-col>
-            <v-col cols="6" align="right">
-                <v-btn class="choice-btn" color="button-back-color" @click="emit('result', true)">
-                    <v-icon icon="mdi-check" color="button-text-color" size="x-large"></v-icon>
-                </v-btn>
-            </v-col>
-        </v-row>
-    </v-card>
+    <SwipeableCard v-on:swipe="onSwipe">
+        <v-card class="question-card py-6" color="card-back-color">
+            <span class="d-block text-center text-h5 mx-6">{{ props.question.question }}</span>
+            <v-divider class="mx-6 my-4" :thickness="5" style="opacity: 100% !important;"></v-divider>
+            <v-row no-gutters class="mx-6 mt-6">
+                <v-col cols="6">
+                    <v-btn class="choice-btn" color="button-back-color" @click="emit('result', false)">
+                        <v-icon icon="mdi-close" color="button-text-color" size="x-large"></v-icon>
+                    </v-btn>
+                </v-col>
+                <v-col cols="6" align="right">
+                    <v-btn class="choice-btn" color="button-back-color" @click="emit('result', true)">
+                        <v-icon icon="mdi-check" color="button-text-color" size="x-large"></v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
+        </v-card>
+    </SwipeableCard>
 </template>
 
 <script setup lang="ts">
 import { type Question } from '@/data/questions';
+import SwipeableCard from '../SwipeableCard.vue';
 const props = defineProps({
     question: {
         type: Object as () => Question,
         required: true
     }
 });
+
 const emit = defineEmits<{
     (e: 'result', value: boolean):void
 }>();
+
+function onSwipe(direction: any) {
+    console.log(direction);
+}
 </script>
 
 <style lang="stylus">
