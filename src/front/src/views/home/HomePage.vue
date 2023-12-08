@@ -43,6 +43,8 @@ function getResult(result: boolean):void {
     }
     else {
         streak.value = 0
+        if (score.value - 3 <= 0)score.value = 0
+        else score.value -= 3
         if (planetPos.value > 1) planetPos.value -= 1
         else {
             console.log('perdu')
