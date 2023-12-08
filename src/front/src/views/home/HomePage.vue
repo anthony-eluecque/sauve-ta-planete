@@ -35,9 +35,11 @@
                 <v-card-title v-if="reponseValue">Bravo</v-card-title>
                 <v-card-title v-else>Dommage</v-card-title>
                 <v-divider></v-divider>
-                <v-card-text class="text__container">{{ actuQuest.explication }}<br><br>
-                    <v-btn @click="nextQuest">Question suivante</v-btn>
-                </v-card-text>
+                <v-card-text class="text__container">{{ actuQuest.explication }}</v-card-text>
+                <v-card-text class="text__container">source : <a :href="actuQuest.source" target="_blank">{{ actuQuest.source }}</a>
+                <br><br>
+                <v-btn @click="nextQuest">Question suivante</v-btn>
+            </v-card-text>
             </v-card>
         </v-dialog>
     </v-card>
@@ -55,6 +57,7 @@ const precedQuest: Ref<Array<Question>> = ref([])
 const streak = ref(0)
 const actuQuest = ref(questions[Math.floor(Math.random() * questions.length)])
 const theme = useTheme()
+theme.global.name.value = 'darkTheme'
 const planetPos = ref(7)
 const planetValue = ['8', '7', '6', '5', '4', '3', '2', '1']
 const gameLose = ref(false)
