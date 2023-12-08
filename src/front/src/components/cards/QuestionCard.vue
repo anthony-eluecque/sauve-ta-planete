@@ -7,7 +7,7 @@
             >
             <template v-slot:activator="{ props }">
                 <v-btn class="information-button" v-bind="props"  rounded>
-                    <v-icon icon="mdi-information-symbol" size="xx-large"></v-icon>
+                    <v-icon icon="mdi-information-variant" size="xx-large"></v-icon>
                 </v-btn>
             </template>
             <v-card  class="rounded-xl question-card py-6" color="card-back-color">
