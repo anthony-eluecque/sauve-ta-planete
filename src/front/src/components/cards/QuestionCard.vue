@@ -12,10 +12,7 @@
             </template>
             <v-card  class="rounded-xl question-card py-6" color="card-back-color">
                 <v-card-title>
-                    <v-btn
-
-                    @click="dialog = false"
-                    >
+                    <v-btn @click="dialog = false">
                         <v-icon icon="mdi-arrow-left-thin" size="xx-large"></v-icon>
                     </v-btn>
                     <br><br>
@@ -30,7 +27,7 @@
                     <a :href="article" v-for="(article,i) in article_text?.sources" :key="i"> <br> <p class="source__text"> {{ article }}</p> </a>
                 </v-card-text>
             </v-card>
-            </v-dialog>
+        </v-dialog>
         <span class="d-block text-center text-h5 mx-6">{{ props.question.question }}</span>
         <v-divider class="mx-6 my-4" :thickness="5" style="opacity: 100% !important;"></v-divider>
         <v-row no-gutters class="mx-6 mt-6">

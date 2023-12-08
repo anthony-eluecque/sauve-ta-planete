@@ -3,6 +3,16 @@
         <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
         <v-img class="planet-img easter-egg-1-plan" :src='`/planets/${planetNum}planete.svg`' @click="showEasterEgg"></v-img>
         <v-img v-show="showEasterEgg1" class="easter-egg-1" src="/easter-egg1.png"></v-img>
+        <v-dialog v-model="gameLose" width="800">
+            <v-card  class="rounded-xl question-card py-6" color="card-back-color">
+                <v-card-title>Vous avez perdu.</v-card-title>
+                <v-divider></v-divider>
+                <v-card-text class="text__container">
+                    Votre planète pue la pollution, bravo !<br><br>
+                    <v-btn @click="replay">Rejouer</v-btn>
+                </v-card-text>
+            </v-card>
+        </v-dialog>
         <v-row no-gutters class="d-flex justify-center my-6">
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
             <img width="55" height="55" :src="coin"/>
@@ -15,6 +25,7 @@
 import QuestionCard from '@/components/cards/QuestionCard.vue';
 import { ref, computed, type Ref } from 'vue';
 import { questions, type Question } from '@/data/questions';
+import router from '@/router';
 
 const score = ref(0)
 const precedQuest: Ref<Array<Question>> = ref([])
@@ -67,6 +78,10 @@ const showEasterEgg = () => {
   setTimeout(() => {
     showEasterEgg1.value = false;
   }, 2000);
+}
+
+function replay() {
+  router.go();
 }
 
 </script>
