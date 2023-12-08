@@ -37,6 +37,26 @@ const lightTheme = {
   },
 }
 
+const darkTheme = {
+  dark: true,
+  colors: {
+    'main-back-color' : '#0B004F',
+    'main-text-color' : '#ffffff',
+    'card-back-color' : '#353168',
+    'card-text-color' : '#ffffff',
+    'question-back-color' : '#d9d9d9',
+    'question-text-color' : '#000000',
+    'button-back-color' : '#1E3050',
+    'button-text-color ': '#C2C2C2',
+    'bubble-back-color' : '#ffffff',
+    'bubble-text-color' : '#1e3050',
+    error: '#B00020',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FB8C00',
+  },
+}
+
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
@@ -57,6 +77,7 @@ export default createVuetify({
     defaultTheme: 'lightTheme',
     themes: {
       lightTheme,
+      darkTheme
     },
   },
 })

@@ -199,7 +199,7 @@ export const questions : Question[] = [
       "question": "Le bilan carbone d'un repas avec du poulet est-il équivalent à 3 repas végétarien.",
       "reponse": true,
       "theme": ["alimentation"],
-      "explication": "En effet, les repas végétarien sont moins coûteux en carbone que les repas composé de viandes",
+      "explication": "Les repas végétarien sont moins coûteux en carbone que les repas composé de viandes",
       "source": "https://impactco2.fr/repas/repasavecdupoulet",
       "code": "<script id=\"impact-co2\" src=\"https://impactco2.fr/iframe.js\" data-type=\"repas/repasavecdupoulet\" data-search=\"?theme=default\"></script>"
     },
@@ -255,7 +255,7 @@ export const questions : Question[] = [
       "question": "les Pays ont une responsabilité climatique proportionnelles à leur niveau de richesse",
       "reponse": true,
       "theme": ["climat"],
-      "explication": "en effet, plus un pays est riche, plus sont impact climatique est elevé en moyenne",
+      "explication": "Plus un pays est riche, plus sont impact climatique est elevé en moyenne",
       "source": "",
       "code": ""
     },
