@@ -1,7 +1,8 @@
 <template>
     <v-card class="home-card">
         <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
-        <v-img class="planet-img" src="/planet.png"></v-img>
+        <v-img class="planet-img easter-egg-1-plan" src="/planet.png" @click="showEasterEgg"></v-img>
+        <v-img v-show="showEasterEgg1" class="easter-egg-1" src="/easter-egg1.png"></v-img>
         <v-row no-gutters class="d-flex justify-center my-6">
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
             <img width="55" height="55" :src="coin"/>
@@ -42,6 +43,14 @@ function getResult(result: boolean):void {
 const questionsChoice = computed(() => {
     return questions.filter((existingQuestion: Question) => !precedQuest.value.includes(existingQuestion));
 })
+
+const showEasterEgg1: Ref<boolean> = ref(false);
+const showEasterEgg = () => {
+  showEasterEgg1.value = true;
+  setTimeout(() => {
+    showEasterEgg1.value = false;
+  }, 2000);
+}
 
 </script>
 
@@ -85,6 +94,25 @@ const questionsChoice = computed(() => {
     9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
   text-transform: uppercase;
   animation: move 0.8s ease-in infinite;
+}
+
+.planet-img {
+    max-height: 35vh;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.planet-img:hover {
+    cursor: pointer;
+    transition: 1s;
+    transform: scale(1.1);
+    transform: rotateZ(360deg);
+}
+
+.planet-img {
+    transition: 1s;
+    transform: scale(1);
+    transform: rotateZ(0deg);
 }
 
 @keyframes move {
