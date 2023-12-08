@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "core-js": "^3.34.0",
+    "hammerjs": "^2.0.8",
     "pinia": "^2.1.7",
     "roboto-fontface": "^0.10.0",
     "vue": "^3.3.10",
@@ -25,6 +26,7 @@
     "@mdi/font": "^7.3.67",
     "@rushstack/eslint-patch": "^1.3.3",
     "@tsconfig/node18": "^18.2.2",
+    "@types/hammerjs": "^2.0.45",
     "@types/node": "^18.19.2",
     "@vitejs/plugin-vue": "^4.5.1",
     "@vue/eslint-config-prettier": "^8.0.0",

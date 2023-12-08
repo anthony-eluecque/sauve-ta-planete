@@ -16,6 +16,7 @@
         </v-row>
     </v-card>
 </template>
+*
 
 <style lang="stylus">
 @import '../../styles/components/question-card'

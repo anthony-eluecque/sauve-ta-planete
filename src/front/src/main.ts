@@ -1,12 +1,5 @@
 import './assets/main.css'
 
-/**
- * main.ts
- *
- * Bootstraps Vuetify and other plugins then mounts the App`
- */
-
-// Components
 import App from './App.vue'
 
 // Composables

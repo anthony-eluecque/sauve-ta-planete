@@ -33,6 +33,7 @@ const coin: ComputedRef<string> = computed(() => {
     margin: 2vh auto;
     border-radius: 50px;
     max-width: 450px;
+    padding: 0 20px;
     border: 4px white solid;
 }
 
