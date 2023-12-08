@@ -20,16 +20,20 @@ import { fr } from 'vuetify/locale';
 const lightTheme = {
   dark: false,
   colors: {
+    'main-back-color' : '#ff7676',
+    'main-text-color' : '#ffffff',
+    'card-back-color' : '#353168',
+    'card-text-color' : '#ffffff',
+    'question-back-color' : '#d9d9d9',
+    'question-text-color' : '#000000',
+    'button-back-color' : '#c2c2c2',
+    'button-text-color ': '#1e3050',
+    'bubble-back-color' : '#ffffff',
+    'bubble-text-color' : '#1e3050',
     error: '#B00020',
     info: '#2196F3',
     success: '#4CAF50',
     warning: '#FB8C00',
-    'background-container': '#FFFFFF',
-    'background-tr-even': '#f3f3f3',
-    'background-tr-odd': '#FFFFFF',
-    'background-navigation-drawer': '#242934',
-    'button-logout': '#FFFFFF',
-    'title-button-logout': '#4663F8'
   },
 }
 
