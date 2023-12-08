@@ -33,8 +33,9 @@ const emit = defineEmits<{
     (e: 'result', value: boolean):void
 }>();
 
-function onSwipe(direction: any) {
-    console.log(direction);
+function onSwipe(direction: string): void {
+    if (direction === 'swipe-left') emit('result', false)
+    else emit('result', true)
 }
 </script>
 

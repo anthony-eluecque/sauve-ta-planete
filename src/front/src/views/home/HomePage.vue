@@ -1,6 +1,6 @@
 <template>
     <v-card class="home-card">
-        <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak }}</span>
+        <span class="capystreak text_shadows" v-if="streak >= 3">CAPYSTREAK<br>x{{ streak - 2 }}</span>
         <v-img class="planet-img" src="/planet.png"></v-img>
         <v-row no-gutters class="d-flex justify-center my-6">
             <span class="text-h4 mr-2 font-weight-bold" style="line-height: 60px; color: white;">{{ score }}</span>
@@ -28,8 +28,9 @@ const coin = computed(() => {
 
 function getResult(result: boolean):void {
     if (result === actuQuest.value.reponse){
-        score.value += 1 + streak.value
-        streak.value += 1
+        if (streak.value >= 4 ) score.value += 1 + streak.value - 3
+        else score.value += 1
+        if (streak.value < 12 ) streak.value += 1
     }
     else streak.value = 0
     precedQuest.value.unshift(actuQuest.value)
