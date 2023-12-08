@@ -91,7 +91,6 @@ function getResult(result: boolean):void {
         else score.value -= 2
         if (planetPos.value > 1) planetPos.value -= 1
         else {
-            console.log('perdu')
             gameLose.value = true
         }
     }
@@ -103,7 +102,6 @@ function getResult(result: boolean):void {
 function nextQuest() {
     showReponse.value = false
     actuQuest.value = questionsChoice.value[Math.floor(Math.random() * questionsChoice.value.length)]
-    console.log(actuQuest.value.reponse)
 }
 
 
