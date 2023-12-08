@@ -96,5 +96,104 @@ export const articles : Article[] = [
             'https://wp.towson.edu/iajournal/2017/02/27/consequences-of-air-pollution-in-france/'
         ],
         theme:"décès"
+    },
+    {
+        titre: "Pollution dans l'industrie textile française",
+        content : `
+        L'industrie textile est l'un des secteurs les plus polluants au monde. En France, elle représente environ 3 % des émissions de gaz à effet de serre, 10 % des rejets d'eaux usées et 15 % des déchets industriels.
+        Les principales sources de pollution dans l'industrie textile française sont les suivantes :
+        La production de fibres : la production de fibres, telles que le coton, le polyester et le nylon, nécessite l'utilisation de ressources naturelles, telles que l'eau, l'énergie et les produits chimiques. Cette production est responsable d'émissions de gaz à effet de serre, de pollution de l'eau et de la libération de produits chimiques dans l'environnement.
+        La fabrication de textiles : la fabrication de textiles, tels que les vêtements, les meubles et les tapis, nécessite également l'utilisation d'énergie et de produits chimiques. Cette fabrication est responsable d'émissions de gaz à effet de serre, de pollution de l'eau et de la libération de produits chimiques dans l'environnement.
+        La consommation de textiles : la consommation de textiles, tels que le lavage et le séchage des vêtements, est également responsable de pollution. Le lavage des vêtements libère des microplastiques dans l'eau, qui peuvent ensuite contaminer les océans et les écosystèmes aquatiques. Le séchage des vêtements à l'aide d'un sèche-linge consomme de l'énergie et émet des gaz à effet de serre.
+        Les impacts de la pollution dans l'industrie textile française sont les suivants :
+        Sur l'environnement : la pollution de l'industrie textile contribue au changement climatique, à la pollution de l'eau et de l'air, et à la perte de biodiversité.
+        
+        
+        Sur la santé humaine : l'exposition aux produits chimiques utilisés dans l'industrie textile peut entraîner des problèmes de santé, tels que le cancer, les maladies respiratoires et les problèmes de reproduction.
+        
+        
+        Sur l'économie : la pollution de l'industrie textile peut entraîner des coûts économiques, tels que les coûts de nettoyage des pollutions et les coûts de santé.
+        
+        
+        Il existe des solutions pour réduire la pollution dans l'industrie textile française. Ces solutions peuvent être mises en œuvre par les entreprises, les gouvernements et les consommateurs.
+        Les entreprises peuvent adopter des pratiques plus durables, telles que l'utilisation de fibres recyclées, la réduction de leur consommation d'énergie et l'utilisation de produits chimiques moins nocifs.
+        
+        
+        Les gouvernements peuvent mettre en place des réglementations plus strictes pour réduire la pollution de l'industrie textile.
+        
+        
+        Les consommateurs peuvent faire des choix plus durables, tels que l'achat de vêtements de seconde main, la réparation de leurs vêtements et le lavage de leurs vêtements à basse température.
+        
+        
+        En adoptant des mesures pour réduire la pollution dans l'industrie textile, nous pouvons protéger l'environnement, la santé humaine et l'économie.
+        
+        `,
+        sources : [
+            'https://www.academieduclimat.paris/les-impacts-de-lindustrie-du-textile/',
+            'https://wecf-france.org/printemps-de-la-consommation-responsable-n-1-les-textiles/'
+        ],
+        theme:"vêtement"
+    },
+    {
+        titre: 'Émissions des Français et des entreprises françaises',
+        content : `
+        Les émissions de gaz à effet de serre (GES) en France sont dues à l'activité des Français et des entreprises françaises. Ces émissions contribuent au changement climatique, qui est l'un des plus grands défis auxquels l'humanité est confrontée.
+        Les émissions des Français : 
+        Les émissions des Français sont principalement dues à leur consommation d'énergie. La consommation d'énergie des Français est principalement utilisée pour se chauffer, se déplacer, cuisiner et utiliser des appareils électriques.
+        Les émissions des Français sont également dues à leur consommation de produits, tels que les aliments, les vêtements et les produits électroniques. La production de ces produits nécessite de l'énergie et des ressources naturelles, ce qui génère des émissions de GES.
+        Les émissions des entreprises françaises : 
+        Les émissions des entreprises françaises sont principalement dues à leur activité industrielle. L'industrie française est responsable d'environ 50 % des émissions de GES du pays.
+        Les secteurs industriels les plus émetteurs de GES sont l'industrie manufacturière, la construction et l'énergie. L'industrie manufacturière est responsable de la production de biens, tels que les automobiles, les vêtements et les produits électroniques. La construction est responsable de la construction de bâtiments et d'infrastructures. L'énergie est responsable de la production d'électricité, de chaleur et de carburants.
+        Impacts des émissions : 
+        Les émissions de GES ont un impact négatif sur l'environnement, la santé humaine et l'économie.
+        Sur l'environnement : les émissions de GES contribuent au changement climatique, qui entraîne une hausse des températures, une augmentation du niveau de la mer et des événements météorologiques extrêmes.
+        
+        
+        Sur la santé humaine : les émissions de GES peuvent entraîner des problèmes de santé, tels que les maladies respiratoires, les maladies cardiaques et certains types de cancer.
+        
+        
+        Sur l'économie : les émissions de GES peuvent entraîner des coûts économiques, tels que les coûts de nettoyage des pollutions et les coûts liés aux changements climatiques.
+        Solutions pour réduire les émissions : 
+        Il existe des solutions pour réduire les émissions de GES en France. Ces solutions peuvent être mises en œuvre par les Français, les entreprises et le gouvernement.
+        Les Français peuvent faire des choix plus durables, tels que réduire leur consommation d'énergie, opter pour des transports plus respectueux de l'environnement et acheter des produits locaux et durables.
+        
+        
+        Les entreprises peuvent adopter des pratiques plus durables, telles que l'amélioration de l'efficacité énergétique, le recours aux énergies renouvelables et la réduction de leurs déchets.
+        
+        
+        Le gouvernement peut mettre en place des réglementations plus strictes pour réduire les émissions de GES, investir dans les énergies renouvelables et soutenir les technologies propres.
+        En adoptant des mesures pour réduire les émissions de GES, nous pouvons protéger l'environnement, la santé humaine et l'économie.
+        
+        `,
+        sources : [
+            'https://www.cea.fr/comprendre/Pages/climat-environnement/questions-reponses-sur-le-climat.aspx'
+        ],
+        theme:"pollution"
+    },
+    {
+        titre: 'L\'énergie nucléaire en France',
+        content : `
+        L'énergie nucléaire est une source d'énergie non renouvelable qui utilise la fission nucléaire pour produire de l'électricité. La France est un des leaders mondiaux de l'énergie nucléaire, avec un parc nucléaire de 56 réacteurs répartis sur 18 sites.
+        Avantages de l'énergie nucléaire : 
+        L'énergie nucléaire présente plusieurs avantages par rapport aux autres sources d'énergie :
+        Elle est une source d'énergie fiable : les centrales nucléaires peuvent produire de l'électricité 24 heures sur 24, 7 jours sur 7, quelles que soient les conditions météorologiques.
+        Elle est une source d'énergie propre : la production d'électricité nucléaire ne produit pas d'émissions de gaz à effet de serre, ce qui contribue à la lutte contre le changement climatique.
+        Elle est une source d'énergie compétitive : le coût de l'électricité nucléaire est généralement inférieur au coût de l'électricité produite par les énergies fossiles.
+        Inconvénients de l'énergie nucléaire : 
+        L'énergie nucléaire présente également quelques inconvénients :
+        Elle est une source d'énergie dangereuse : les accidents nucléaires peuvent avoir des conséquences dramatiques sur l'environnement et la santé humaine.
+        Elle est une source d'énergie non renouvelable : les ressources en uranium sont limitées.
+        Elle est une source d'énergie controversée : l'énergie nucléaire fait l'objet de débats et de controverses, notamment en raison des risques liés à la sécurité et à la gestion des déchets nucléaires.
+        Place de l'énergie nucléaire en France : 
+        L'énergie nucléaire joue un rôle important dans le mix énergétique français. En 2022, l'énergie nucléaire a représenté 72 % de la production d'électricité en France.
+        Le gouvernement français a fixé un objectif de neutralité carbone d'ici 2050. Pour atteindre cet objectif, la France prévoit de réduire la part de l'énergie nucléaire dans son mix énergétique, tout en augmentant la part des énergies renouvelables.
+        Conclusion : 
+        L'énergie nucléaire est une source d'énergie controversée, mais elle présente également des avantages importants. La France a choisi de faire de l'énergie nucléaire une source d'énergie majeure, mais elle prévoit de réduire sa dépendance à cette source d'énergie dans les années à venir.
+        
+        `,
+        sources : [
+            'https://www.lemonde.fr/quiz-de-culture-generale/article/2023/12/02/quiz-climat-etes-vous-chaud-pour-demeler-le-vrai-du-faux_6203523_6083483.html'
+        ],
+        theme:"énergie"
     }
 ]
