@@ -129,7 +129,7 @@ function handleEasterEggClick() {
 }
 
 function replay(): void {
-  router.go();
+  router.go(0);
 }
 
 </script>
