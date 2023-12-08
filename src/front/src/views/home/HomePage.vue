@@ -75,7 +75,7 @@ const coin = computed(() => {
 })
 
 function getResult(result: boolean):void {
-    reponseValue.value = true
+    reponseValue.value = (result === actuQuest.value.reponse)
     showReponse.value = true
     if (result === actuQuest.value.reponse){
         if (planetPos.value < 15) planetPos.value += 1
@@ -85,8 +85,8 @@ function getResult(result: boolean):void {
     }
     else {
         streak.value = 0
-        if (score.value - 3 <= 0)score.value = 0
-        else score.value -= 3
+        if (score.value - 2 <= 0)score.value = 0
+        else score.value -= 2
         if (planetPos.value > 1) planetPos.value -= 1
         else {
             console.log('perdu')
